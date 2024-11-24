@@ -30,7 +30,7 @@ class IncomeTaxCalculatorScreen extends StatelessWidget {
       ),
       body: SingleChildScrollView(
           child: Container(
-        margin: EdgeInsets.only(top: 20),
+        margin: EdgeInsets.only(top: 10),
         height: MediaQuery.of(context).size.height * 1.065,
         decoration: BoxDecoration(
             color: AppColors.whiteColor,
