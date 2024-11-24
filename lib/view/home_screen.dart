@@ -6,6 +6,7 @@ import 'package:trackify_tools/utils/custom_text_style.dart';
 import 'package:trackify_tools/utils/image_path.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:trackify_tools/view/EMICalculator/emi_calculator_screen.dart';
+import 'package:trackify_tools/view/ExpensesDetails/expenses_details_screen.dart';
 import 'package:trackify_tools/view/ProductBillingCalculator/billing_calculator_screen.dart';
 import 'package:trackify_tools/view/SavingGoalCalculator/saving_goal_calculator.dart';
 import 'package:trackify_tools/view/income_tax_calculator.dart';
@@ -25,7 +26,7 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Padding(
-                padding: const EdgeInsets.only(left: 18, right: 18, top: 18),
+                padding: const EdgeInsets.only(left: 18, right: 18),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -196,7 +197,7 @@ class HomeScreen extends StatelessWidget {
                     Expanded(
                       child: InkWell(
                         onTap: () {
-                          //Get.to(() => ExpensesDetails());
+                          Get.to(() => ExpensesDetailsScreen());
                         },
                         child: CustomContainer(
                           imagePath: ImagePath.expensesDetails,
