@@ -5,6 +5,7 @@ import 'package:trackify_tools/utils/colors.dart';
 import 'package:trackify_tools/utils/custom_text_style.dart';
 import 'package:trackify_tools/utils/image_path.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:trackify_tools/view/IncomTaxCalcultor/income_tax_calculator.dart';
 import 'package:trackify_tools/widgets/home_screen_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -40,49 +41,55 @@ class HomeScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Obx(() => PopupMenuButton<String>(
-                          icon: Image.asset(
-                            c.currentFlag
-                                .value, // Observe and display selected flag icon
-                            height: 24,
-                            width: 24,
+                    Obx(() => Theme(
+                          data: ThemeData(
+                            popupMenuTheme: PopupMenuThemeData(
+                              color: AppColors.whiteColor,
+                            ),
                           ),
-                          onSelected: (String value) {
-                            c.switchLanguage(value); // Update language and flag
-                          },
-                          itemBuilder: (BuildContext context) =>
-                              <PopupMenuEntry<String>>[
-                            PopupMenuItem<String>(
-                              value: 'en',
-                              child: Row(
-                                children: [
-                                  Image.asset('assets/images/usa.png',
-                                      height: 20, width: 20),
-                                  SizedBox(width: 10),
-                                  Text(
-                                    'english_language'.tr,
-                                    style: CustomTextStyles.f12W600(
-                                        color: AppColors.textColor),
-                                  ),
-                                ],
-                              ),
+                          child: PopupMenuButton<String>(
+                            icon: Image.asset(
+                              c.currentFlag.value,
+                              height: 24,
+                              width: 24,
                             ),
-                            PopupMenuItem<String>(
-                              value: 'ne',
-                              child: Row(
-                                children: [
-                                  Image.asset('assets/images/nepal.png',
-                                      height: 20, width: 20),
-                                  SizedBox(width: 10),
-                                  Text(
-                                    'nepali_language'.tr,
-                                    style: CustomTextStyles.f12W600(
-                                        color: AppColors.textColor),
-                                  ),
-                                ],
+                            onSelected: (String value) {
+                              c.switchLanguage(value);
+                            },
+                            itemBuilder: (BuildContext context) =>
+                                <PopupMenuEntry<String>>[
+                              PopupMenuItem<String>(
+                                value: 'en',
+                                child: Row(
+                                  children: [
+                                    Image.asset('assets/images/usa.png',
+                                        height: 20, width: 20),
+                                    SizedBox(width: 10),
+                                    Text(
+                                      'english_language'.tr,
+                                      style: CustomTextStyles.f12W600(
+                                          color: AppColors.textColor),
+                                    ),
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
+                              PopupMenuItem<String>(
+                                value: 'ne',
+                                child: Row(
+                                  children: [
+                                    Image.asset('assets/images/nepal.png',
+                                        height: 20, width: 20),
+                                    SizedBox(width: 10),
+                                    Text(
+                                      'nepali_language'.tr,
+                                      style: CustomTextStyles.f12W600(
+                                          color: AppColors.textColor),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
                         )),
                   ],
                 ),
@@ -106,7 +113,7 @@ class HomeScreen extends StatelessWidget {
                     Expanded(
                       child: InkWell(
                         onTap: () {
-                          //Get.to(() => IncomeTaxCalculator());
+                          Get.to(() => IncomeTaxCalculatorScreen());
                         },
                         child: CustomContainer(
                           imagePath: ImagePath.Incometaxcalc,
@@ -176,7 +183,7 @@ class HomeScreen extends StatelessWidget {
                         },
                         child: CustomContainer(
                           imagePath: ImagePath.saving_goal_calc,
-                          containerName: "Saving Goal".tr,
+                          containerName: "saving_goal".tr,
                           text2: 'Calculator'.tr,
                         ),
                       ),
@@ -189,8 +196,8 @@ class HomeScreen extends StatelessWidget {
                         },
                         child: CustomContainer(
                           imagePath: ImagePath.expensesDetails,
-                          containerName: "Expenses ".tr,
-                          text2: 'Details'.tr,
+                          containerName: "expenses".tr,
+                          text2: 'details'.tr,
                         ),
                       ),
                     ),

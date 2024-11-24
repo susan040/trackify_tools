@@ -6,7 +6,6 @@ import 'package:trackify_tools/utils/colors.dart';
 import 'package:trackify_tools/utils/custom_text_style.dart';
 import 'package:trackify_tools/utils/image_path.dart';
 
-
 class TestimonialCard extends StatelessWidget {
   final String name;
   final String imageUrl;
@@ -113,6 +112,7 @@ class TestimonialCard extends StatelessWidget {
     );
   }
 }
+
 class HomeFirstImageWidget extends StatelessWidget {
   const HomeFirstImageWidget({
     super.key,
@@ -122,7 +122,7 @@ class HomeFirstImageWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(left: 18, right: 18),
-      height: 170,
+      height: 185,
       width: double.infinity,
       decoration: BoxDecoration(
         color: AppColors.whiteColor,
@@ -136,36 +136,37 @@ class HomeFirstImageWidget extends StatelessWidget {
         ],
       ),
       child: Padding(
-        padding: EdgeInsets.only(left: 16),
+        padding: EdgeInsets.only(left: 20, right: 6),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(top: 35),
+                padding: const EdgeInsets.only(
+                  top: 25,
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       "banner".tr,
                       style:
-                          CustomTextStyles.f14W600(color: AppColors.textColor1),
+                          CustomTextStyles.f12W600(color: AppColors.textColor1),
+                      textAlign: TextAlign.justify,
                     ),
                     SizedBox(height: 16),
                     Container(
                       height: 35,
-                      width: 85,
+                      width: 140,
                       decoration: BoxDecoration(
-                        color: AppColors.primaryColor, // Background color
-                        borderRadius:
-                            BorderRadius.circular(15), // Circular radius
+                        color: AppColors.primaryColor,
+                        borderRadius: BorderRadius.circular(15),
                       ),
                       child: Center(
                         child: Text(
                           "explore".tr,
-                          style: CustomTextStyles.f12W600(
+                          style: CustomTextStyles.f12W400(
                               color: AppColors.whiteColor),
-                          textAlign: TextAlign.center,
                         ),
                       ),
                     ),
@@ -173,10 +174,11 @@ class HomeFirstImageWidget extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(width: 8),
             Image.asset(
-              ImagePath.first, 
-              height: 105,
-              width: 138,
+              ImagePath.first,
+              width: 130,
+              fit: BoxFit.cover,
             ),
           ],
         ),
