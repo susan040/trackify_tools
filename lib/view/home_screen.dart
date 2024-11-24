@@ -5,6 +5,7 @@ import 'package:trackify_tools/utils/colors.dart';
 import 'package:trackify_tools/utils/custom_text_style.dart';
 import 'package:trackify_tools/utils/image_path.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:trackify_tools/view/EMICalculator/emi_calculator_screen.dart';
 import 'package:trackify_tools/view/ProductBillingCalculator/billing_calculator_screen.dart';
 import 'package:trackify_tools/view/income_tax_calculator.dart';
 import 'package:trackify_tools/view/interest_rate_calculator.dart';
@@ -161,7 +162,7 @@ class HomeScreen extends StatelessWidget {
                     Expanded(
                       child: InkWell(
                         onTap: () {
-                          //Get.to(() => EmiCalculator());
+                          Get.to(() => EmiCalculatorScreen());
                         },
                         child: CustomContainer(
                           imagePath: ImagePath.emi,
